@@ -1,0 +1,7 @@
+require('options')
+require('plugins')
+require('lang_serv')
+require('vars')
+require('keymaps')
+require('discord')
+require('compe-conf')

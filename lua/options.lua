@@ -1,0 +1,13 @@
+vim.o.cot = 'menuone,noselect'
+vim.o.et = true
+vim.o.ic = true
+vim.o.mouse = 'a'
+vim.o.scs = true
+vim.o.smd = false
+vim.o.sw = 4
+vim.o.tgc = true
+vim.o.title = true
+vim.wo.fdm = 'marker'
+vim.wo.nu = true
+vim.wo.rnu = true
+vim.wo.scl = 'yes'
