@@ -1,3 +1,5 @@
+-- use packer.nvim instead
+
 vim.cmd 'packadd paq-nvim'
 local paq = require('paq-nvim').paq
 
