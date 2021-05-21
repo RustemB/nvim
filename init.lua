@@ -1,5 +1,5 @@
-require('options')
 require('plugins')
+require('options')
 require('lang_serv')
 require('vars')
 require('keymaps')
