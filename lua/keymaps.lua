@@ -10,6 +10,7 @@ keymap('v', '<S-Up>', [[:m '<-2<CR>gv=gv]], { noremap = true, silent = true })
 
 -- lsp
 keymap('n', 'K', ':lua vim.lsp.buf.hover()<CR>', { silent = true })
-keymap('n', '<F5>', ':lua vim.lsp.buf.rename()<CR>', { silent = true })
+keymap('n', '<leader>r', ':lua vim.lsp.buf.rename()<CR>', { silent = true })
 keymap('n', '<leader>gd', ':lua vim.lsp.buf.definition()<CR>', { silent = true })
 keymap('n', 'Q', ':lua vim.lsp.buf.code_action()<CR>', { silent = true })
+keymap('n', '<leader>ff', ':lua vim.lsp.buf.formatting()<CR>', { silent = true })
