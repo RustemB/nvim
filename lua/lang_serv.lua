@@ -33,10 +33,16 @@ nvim_lsp.hls.setup{}
 nvim_lsp.elmls.setup{}
 nvim_lsp.julials.setup{}
 nvim_lsp.yamlls.setup{}
+--[[
 nvim_lsp.rls.setup {
 	settings = {
 		rust = {
 			unstable_features = true,
 		},
 	},
+}
+--]]
+nvim_lsp.rust_analyzer.setup {
+	cmd = { "rustup", "run", "nightly", "rust-analyzer" },
+
 }
