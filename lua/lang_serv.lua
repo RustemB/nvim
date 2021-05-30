@@ -33,6 +33,7 @@ nvim_lsp.hls.setup{}
 nvim_lsp.elmls.setup{}
 nvim_lsp.julials.setup{}
 nvim_lsp.yamlls.setup{}
+nvim_lsp.pyls.setup{}
 --[[
 nvim_lsp.rls.setup {
 	settings = {
@@ -44,5 +45,10 @@ nvim_lsp.rls.setup {
 --]]
 nvim_lsp.rust_analyzer.setup {
 	cmd = { "rustup", "run", "nightly", "rust-analyzer" },
-
 }
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    update_in_insert = true,
+  }
+)
