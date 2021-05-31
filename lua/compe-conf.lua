@@ -11,7 +11,6 @@ require('compe').setup {
     max_kind_width = 100,
     max_menu_width = 100,
     documentation = true,
-
     source = {
         path = true,
         buffer = true,
@@ -19,6 +18,7 @@ require('compe').setup {
         nvim_lsp = true,
         nvim_lua = true,
         vsnip = true,
-        ultisnips = true
+        ultisnips = true,
+        emoji = true
     }
 }
