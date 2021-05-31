@@ -39,6 +39,35 @@ nvim_lsp.rls.setup {
 nvim_lsp.rust_analyzer.setup {
     cmd = {"rustup", "run", "nightly", "rust-analyzer"}
 }
+nvim_lsp.efm.setup {
+    init_options = {documentFormatting = true},
+    settings = {
+        rootMarkers = {".git/"},
+        languages = {
+            lua = {{formatCommand = "lua-format -i", formatStdin = true}},
+            sh = {
+                {formatCommand = "shfmt -ci -s -bn", formatStdin = true}, {
+                    lintCommand = "shellcheck -f gcc -x",
+                    lintSource = "shellcheck",
+                    lintFormats = {
+                        '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
+                        '%f:%l:%c: %tote: %m'
+                    }
+                }
+            },
+            make = {{lintCommand = "checkmake", lintStdin = true}},
+            python = {
+                {
+                    lintCommand = 'mypy --show-column-numbers',
+                    lintFormats = {
+                        '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
+                        '%f:%l:%c: %tote: %m'
+                    }
+                }
+            }
+        }
+    }
+}
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
     vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
