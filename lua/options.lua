@@ -1,9 +1,9 @@
 local o = vim.opt
-o.completeopt = { 'menuone', 'noselect' }
+o.completeopt = {'menuone', 'noselect'}
 o.expandtab = true
 o.foldmethod = 'marker'
 o.ignorecase = true
-o.mouse = { a = true }
+o.mouse = {a = true}
 o.number = true
 o.relativenumber = true
 o.shiftwidth = 4
