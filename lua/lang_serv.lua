@@ -18,7 +18,6 @@ nvim_lsp.sumneko_lua.setup {
     }
 }
 nvim_lsp.gdscript.setup {}
-nvim_lsp.vimls.setup {}
 nvim_lsp.clangd.setup {}
 nvim_lsp.bashls.setup {}
 nvim_lsp.hls.setup {}
@@ -43,6 +42,9 @@ nvim_lsp.efm.setup {
     settings = {
         rootMarkers = {".git/"},
         languages = {
+            markdown = {
+                {formatCommand = "pandoc -f markdown -t gfm -sp --tab-stop=2"}
+            },
             lua = {{formatCommand = "lua-format -i", formatStdin = true}},
             sh = {
                 {formatCommand = "shfmt -ci -s -bn", formatStdin = true}, {
