@@ -1,17 +1,14 @@
--- TODO: use packer.nvim instead
-vim.cmd 'packadd paq-nvim'
-local paq = require('paq-nvim').paq
+vim.cmd [[ packadd packer.nvim ]]
 
-paq {'savq/paq-nvim', opt = true}
-paq {
-    'nvim-treesitter/nvim-treesitter',
-    run = (function() vim.cmd('TSUpdate') end)
-}
-paq 'hrsh7th/nvim-compe'
-paq 'neovim/nvim-lspconfig'
-paq 'srcery-colors/srcery-vim'
-paq 'itchyny/lightline.vim'
-paq 'andweeb/presence.nvim'
-paq 'romgrk/nvim-treesitter-context'
-paq 'rafcamlet/nvim-luapad'
-paq 'npxbr/glow.nvim'
+return require('packer').startup(function(use)
+    use {'wbthomason/packer.nvim', opt = true}
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+    use 'hrsh7th/nvim-compe'
+    use 'neovim/nvim-lspconfig'
+    use 'srcery-colors/srcery-vim'
+    use 'itchyny/lightline.vim'
+    use 'andweeb/presence.nvim'
+    use 'romgrk/nvim-treesitter-context'
+    use 'rafcamlet/nvim-luapad'
+    use 'npxbr/glow.nvim'
+end)
