@@ -11,4 +11,8 @@ return require('packer').startup(function(use)
     use 'romgrk/nvim-treesitter-context'
     use 'rafcamlet/nvim-luapad'
     use 'npxbr/glow.nvim'
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+    }
 end)
