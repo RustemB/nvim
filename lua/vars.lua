@@ -1,4 +1,4 @@
-vim.cmd [[ colo srcery ]]
+vim.cmd [[ colorscheme srcery ]]
 vim.g.netrw_banner = 0
 vim.g.lightline = {colorscheme = "srcery"}
 vim.g.srcery_italic = 1
