@@ -12,3 +12,5 @@ o.signcolumn = 'yes'
 o.smartcase = true
 o.termguicolors = true
 o.title = true
+o.grepprg = 'rg --vimgrep --smart-case --hidden'
+o.grepformat = '%f:%l:%c:%m'
