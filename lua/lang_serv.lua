@@ -18,6 +18,7 @@ nvim_lsp.sumneko_lua.setup {
     }
 }
 nvim_lsp.gdscript.setup {}
+nvim_lsp.dartls.setup {}
 nvim_lsp.clangd.setup {}
 nvim_lsp.bashls.setup {}
 nvim_lsp.hls.setup {}
