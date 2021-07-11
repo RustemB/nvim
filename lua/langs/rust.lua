@@ -1,5 +1,7 @@
 function RustDoc(q)
-    vim.fn.system("xdg-open https://doc.rust-lang.org/stable/std/?search=" .. q)
+    local qq = vim.fn.fnameescape(q)
+    vim.fn
+        .system("xdg-open https://doc.rust-lang.org/stable/std/?search=" .. qq)
 end
 
-vim.cmd [[autocmd FileType rust nnoremap <buffer><leader>D :lua RustDoc(vim.api.nvim_call_function('fnameescape', {vim.fn.expand('<cword>')}))<CR>]]
+vim.cmd [[autocmd FileType rust nnoremap <buffer><leader>D :lua RustDoc(vim.fn.expand('<cword>'))<CR>]]
