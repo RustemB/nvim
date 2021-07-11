@@ -1,17 +1,19 @@
 local vimp = require('vimp')
+local o = {'silent'}
+local lsp = vim.lsp.buf
+local lsp_code_actions = require("telescope.builtin").lsp_code_actions
 
 -- code movement
-vimp.nnoremap({'silent'}, '<S-Down>', ':m .+1<CR>==')
-vimp.nnoremap({'silent'}, '<S-Up>', ':m .-2<CR>==')
-vimp.inoremap({'silent'}, '<S-Down>', '<ESC>:m .+1<CR>==gi')
-vimp.inoremap({'silent'}, '<S-Up>', '<ESC>:m .-2<CR>==gi')
-vimp.vnoremap({'silent'}, '<S-Down>', [[:m '>+1<CR>gv=gv]])
-vimp.vnoremap({'silent'}, '<S-Up>', [[:m '<-2<CR>gv=gv]])
+vimp.nnoremap(o, '<S-Down>', ':m .+1<CR>==')
+vimp.nnoremap(o, '<S-Up>', ':m .-2<CR>==')
+vimp.inoremap(o, '<S-Down>', '<ESC>:m .+1<CR>==gi')
+vimp.inoremap(o, '<S-Up>', '<ESC>:m .-2<CR>==gi')
+vimp.vnoremap(o, '<S-Down>', [[:m '>+1<CR>gv=gv]])
+vimp.vnoremap(o, '<S-Up>', [[:m '<-2<CR>gv=gv]])
 
 -- lsp
-vimp.nnoremap({'silent'}, 'K', function() vim.lsp.buf.hover() end)
-vimp.nnoremap({'silent'}, '<leader>r', function() vim.lsp.buf.rename() end)
-vimp.nnoremap({'silent'}, '<leader>gd', function() vim.lsp.buf.definition() end)
-vimp.nnoremap({'silent'}, 'Q',
-              function() require("telescope.builtin").lsp_code_actions() end)
-vimp.nnoremap({'silent'}, '<leader>ff', function() vim.lsp.buf.formatting() end)
+vimp.nnoremap(o, 'K', lsp.hover)
+vimp.nnoremap(o, '<leader>r', lsp.rename)
+vimp.nnoremap(o, '<leader>gd', lsp.definition)
+vimp.nnoremap(o, 'Q', lsp_code_actions)
+vimp.nnoremap(o, '<leader>ff', lsp.formatting)
