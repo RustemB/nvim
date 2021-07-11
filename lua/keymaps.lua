@@ -1,17 +1,17 @@
-local keymap = vim.api.nvim_set_keymap
+local vimp = require('vimp')
 
 -- code movement
-keymap('n', '<S-Down>', ':m .+1<CR>==', {noremap = true, silent = true})
-keymap('n', '<S-Up>', ':m .-2<CR>==', {noremap = true, silent = true})
-keymap('i', '<S-Down>', '<ESC>:m .+1<CR>==gi', {noremap = true, silent = true})
-keymap('i', '<S-Up>', '<ESC>:m .-2<CR>==gi', {noremap = true, silent = true})
-keymap('v', '<S-Down>', [[:m '>+1<CR>gv=gv]], {noremap = true, silent = true})
-keymap('v', '<S-Up>', [[:m '<-2<CR>gv=gv]], {noremap = true, silent = true})
+vimp.nnoremap({'silent'}, '<S-Down>', ':m .+1<CR>==')
+vimp.nnoremap({'silent'}, '<S-Up>', ':m .-2<CR>==')
+vimp.inoremap({'silent'}, '<S-Down>', '<ESC>:m .+1<CR>==gi')
+vimp.inoremap({'silent'}, '<S-Up>', '<ESC>:m .-2<CR>==gi')
+vimp.vnoremap({'silent'}, '<S-Down>', [[:m '>+1<CR>gv=gv]])
+vimp.vnoremap({'silent'}, '<S-Up>', [[:m '<-2<CR>gv=gv]])
 
 -- lsp
-keymap('n', 'K', ':lua vim.lsp.buf.hover()<CR>', {silent = true})
-keymap('n', '<leader>r', ':lua vim.lsp.buf.rename()<CR>', {silent = true})
-keymap('n', '<leader>gd', ':lua vim.lsp.buf.definition()<CR>', {silent = true})
-keymap('n', 'Q', ':lua require("telescope.builtin").lsp_code_actions()<CR>',
-       {silent = true})
-keymap('n', '<leader>ff', ':lua vim.lsp.buf.formatting()<CR>', {silent = true})
+vimp.nnoremap({'silent'}, 'K', function() vim.lsp.buf.hover() end)
+vimp.nnoremap({'silent'}, '<leader>r', function() vim.lsp.buf.rename() end)
+vimp.nnoremap({'silent'}, '<leader>gd', function() vim.lsp.buf.definition() end)
+vimp.nnoremap({'silent'}, 'Q',
+              function() require("telescope.builtin").lsp_code_actions() end)
+vimp.nnoremap({'silent'}, '<leader>ff', function() vim.lsp.buf.formatting() end)

@@ -11,6 +11,7 @@ return require('packer').startup(function(use)
     use 'andweeb/presence.nvim'
     use 'rafcamlet/nvim-luapad'
     use 'npxbr/glow.nvim'
+    use 'svermeulen/vimpeccable'
     use {
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
