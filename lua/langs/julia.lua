@@ -5,6 +5,9 @@ function JuliaDoc(q)
 end
 
 vim.cmd [[
+augroup LOCAL_JULIA
+autocmd!
 autocmd FileType julia nnoremap <buffer><leader>D :lua JuliaDoc(vim.fn.expand('<cword>'))<CR>
 autocmd BufEnter *.jl lua vim.opt.filetype = "julia"
+augroup END
 ]]
