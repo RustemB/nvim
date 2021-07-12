@@ -6,14 +6,15 @@ nvim_lsp.sumneko_lua.setup {
     settings = {
         Lua = {
             runtime = {version = 'LuaJIT', path = vim.split(package.path, ';')},
-            diagnostics = {globals = {'vim'}},
+            diagnostics = {globals = {'vim', 'xplr'}},
             workspace = {
                 library = {
                     [vim.fn.expand('$VIMRUNTIME/lua')] = true,
                     [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true
                 }
             },
-            telemetry = {enable = false}
+            telemetry = {enable = false},
+            completion = {keywordSnippet = "Disable"}
         }
     }
 }
