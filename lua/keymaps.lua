@@ -10,6 +10,7 @@ vimp.inoremap(o, '<S-Down>', '<ESC>:m .+1<CR>==gi')
 vimp.inoremap(o, '<S-Up>', '<ESC>:m .-2<CR>==gi')
 vimp.vnoremap(o, '<S-Down>', [[:m '>+1<CR>gv=gv]])
 vimp.vnoremap(o, '<S-Up>', [[:m '<-2<CR>gv=gv]])
+vimp.tnoremap(o, '<Esc>', [[<C-\><C-n>]])
 
 -- lsp
 vimp.nnoremap(o, 'K', lsp.hover)

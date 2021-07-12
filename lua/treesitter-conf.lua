@@ -1,7 +1,8 @@
 require('nvim-treesitter.configs').setup {
     ensure_installed = {
-        "dart", "latex", 'bash', 'c', 'comment', 'cpp', 'fennel', 'gdscript',
-        'haskell', 'html', 'julia', 'lua', 'python', 'rust', 'toml', 'yaml'
+        "css", "dart", "latex", 'bash', 'c', 'comment', 'cpp', 'fennel',
+        'gdscript', 'haskell', 'html', "javascript", 'julia', 'lua', 'python',
+        "regex", 'rust', 'toml', 'yaml'
     },
     highlight = {enable = true}
 }
