@@ -26,7 +26,6 @@ nvim_lsp.hls.setup {}
 nvim_lsp.elmls.setup {}
 nvim_lsp.julials.setup {}
 nvim_lsp.yamlls.setup {}
-nvim_lsp.pyls.setup {}
 --[[
 nvim_lsp.rls.setup {
 	settings = {
