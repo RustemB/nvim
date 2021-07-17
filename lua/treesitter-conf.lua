@@ -4,5 +4,17 @@ require('nvim-treesitter.configs').setup {
         'fennel', 'gdscript', 'haskell', 'html', 'javascript', 'julia', 'lua',
         'python', 'regex', 'rust', 'toml', 'yaml'
     },
-    highlight = {enable = true}
+    highlight = {enable = true},
+    textobjects = {
+        select = {
+            enable = true,
+            lookahead = true,
+            keymaps = {
+                ["af"] = "@function.outer",
+                ["if"] = "@function.inner",
+                ["ac"] = "@class.outer",
+                ["ic"] = "@class.inner"
+            }
+        }
+    }
 }
