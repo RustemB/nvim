@@ -1,5 +1,5 @@
 local o = vim.opt
-o.completeopt = {'menuone', 'noselect'}
+o.completeopt = {'menuone', 'noselect', 'noinsert'}
 o.expandtab = true
 o.foldmethod = 'marker'
 o.ignorecase = true
