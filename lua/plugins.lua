@@ -9,7 +9,6 @@ return require('packer').startup(function(use)
     use 'neovim/nvim-lspconfig'
     use 'srcery-colors/srcery-vim'
     use 'itchyny/lightline.vim'
-    use 'andweeb/presence.nvim'
     use 'rafcamlet/nvim-luapad'
     use 'npxbr/glow.nvim'
     use 'svermeulen/vimpeccable'
