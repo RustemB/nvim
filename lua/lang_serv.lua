@@ -1,4 +1,8 @@
 local nvim_lsp = require('lspconfig')
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 nvim_lsp.sumneko_lua.setup {
     cmd = {
         'lua-language-server', "-E", '/usr/share/lua-language-server/main.lua'
@@ -18,6 +22,7 @@ nvim_lsp.sumneko_lua.setup {
         }
     }
 }
+nvim_lsp.cssls.setup {capabilities = capabilities}
 nvim_lsp.gdscript.setup {}
 nvim_lsp.dartls.setup {}
 nvim_lsp.clangd.setup {}
