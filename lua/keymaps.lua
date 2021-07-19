@@ -1,7 +1,7 @@
 local vimp = require('vimp')
 local o = {'silent'}
 local lsp = vim.lsp.buf
-local lsp_code_actions = require("telescope.builtin").lsp_code_actions
+local ts = require("telescope.builtin")
 
 -- code movement
 vimp.nnoremap(o, '<S-Down>', ':m .+1<CR>==')
@@ -16,8 +16,23 @@ vimp.tnoremap(o, '<Esc>', [[<C-\><C-n>]])
 vimp.nnoremap(o, 'K', lsp.hover)
 vimp.nnoremap(o, '<leader>r', lsp.rename)
 vimp.nnoremap(o, '<leader>gd', lsp.definition)
-vimp.nnoremap(o, 'Q', lsp_code_actions)
+vimp.nnoremap(o, 'Q', ts.lsp_code_actions)
 vimp.nnoremap(o, '<leader>ff', lsp.formatting)
+
+-- Telescope
+vimp.nnoremap(o, '<C-p>', ts.git_files)
+
+-- Buffers
+vimp.nnoremap(o, '<leader>]', ':BufferNext<CR>')
+vimp.nnoremap(o, '<leader>[', ':BufferPrevious<CR>')
+
+for idx = 1, 9 do
+    vimp.nnoremap(o, '<A-' .. idx .. '>', ':BufferGoto ' .. idx .. '<CR>')
+end
+
+vimp.nnoremap(o, '<A-w>', ':BufferClose<CR>')
+
+-- Snippets
 
 vim.cmd [[
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
