@@ -23,6 +23,7 @@ nvim_lsp.sumneko_lua.setup {
     }
 }
 nvim_lsp.cssls.setup {capabilities = capabilities}
+nvim_lsp.html.setup {capabilities = capabilities}
 nvim_lsp.gdscript.setup {}
 nvim_lsp.dartls.setup {}
 nvim_lsp.clangd.setup {}
