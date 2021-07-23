@@ -24,5 +24,6 @@ require('compe').setup {
         calc = true,
         nvim_lsp = true,
         nvim_lua = true,
+        luasnip = true
     }
 }
