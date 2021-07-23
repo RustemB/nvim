@@ -1,4 +1,5 @@
 vim.cmd [[ colorscheme srcery ]]
+vim.cmd [[ highlight Normal guibg=none ]]
 vim.g.netrw_banner = 0
 vim.g.lightline = {colorscheme = "srcery"}
 vim.g.srcery_italic = 1
