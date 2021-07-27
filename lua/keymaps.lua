@@ -1,7 +1,8 @@
-local vimp = require('vimp')
-local o = {'silent'}
-local lsp = vim.lsp.buf
+local neogit = require('neogit')
 local ts = require("telescope.builtin")
+local vimp = require('vimp')
+local lsp = vim.lsp.buf
+local o = {'silent'}
 
 -- code movement
 vimp.nnoremap(o, '<S-Down>', ':m .+1<CR>==')
@@ -44,3 +45,6 @@ snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
 imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 ]]
+
+-- NeoGit
+vimp.nnoremap(o, '<leader>ng', neogit.open)
