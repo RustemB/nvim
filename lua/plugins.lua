@@ -13,6 +13,7 @@ return require('packer').startup(function(use)
     use 'npxbr/glow.nvim'
     use 'svermeulen/vimpeccable'
     use 'L3MON4D3/LuaSnip'
+    use {'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim'}
     use {
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
