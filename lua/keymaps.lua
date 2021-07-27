@@ -47,4 +47,4 @@ smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' 
 ]]
 
 -- NeoGit
-vimp.nnoremap(o, '<leader>ng', neogit.open)
+vimp.nnoremap(o, '<leader>gg', neogit.open)
