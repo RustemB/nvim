@@ -1,3 +1,4 @@
+local dap = require('dap')
 local neogit = require('neogit')
 local ts = require("telescope.builtin")
 local vimp = require('vimp')
@@ -34,7 +35,6 @@ end
 vimp.nnoremap(o, '<A-w>', ':BufferClose<CR>')
 
 -- Snippets
-
 vim.cmd [[
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
 inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
@@ -48,3 +48,19 @@ smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' 
 
 -- NeoGit
 vimp.nnoremap(o, '<leader>gg', neogit.open)
+
+-- DAP
+vimp.nnoremap(o, '<F5>', dap.continue)
+vimp.nnoremap(o, '<F10>', dap.step_over)
+vimp.nnoremap(o, '<F11>', dap.step_into)
+vimp.nnoremap(o, '<F12>', dap.step_out)
+
+vimp.nnoremap(o, '<leader>b', dap.toggle_breakpoint)
+vimp.nnoremap(o, '<leader>B', function()
+    dap.set_breakpoint(vim.fn.input('Breakpoint condition: '))
+end)
+vimp.nnoremap(o, '<leader>lp', function()
+    dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))
+end)
+vimp.nnoremap(o, '<leader>dr', dap.repl.open)
+vimp.nnoremap(o, '<leader>dl', dap.run_last)
