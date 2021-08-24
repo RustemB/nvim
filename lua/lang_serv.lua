@@ -22,6 +22,8 @@ nvim_lsp.sumneko_lua.setup {
         }
     }
 }
+require("lspconfig/sixtyfps")
+nvim_lsp.sixtyfps.setup {}
 nvim_lsp.cssls.setup {capabilities = capabilities}
 nvim_lsp.html.setup {capabilities = capabilities}
 nvim_lsp.gdscript.setup {}
