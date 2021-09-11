@@ -17,6 +17,8 @@ return require('packer').startup(function(use)
     use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
     use {'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim'}
     use 'iamcco/markdown-preview.nvim'
+    use '~/Work/sixtyfps-vim'
+    use 'fedorenchik/fasm.vim'
     use {
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
