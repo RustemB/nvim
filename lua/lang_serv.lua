@@ -26,6 +26,7 @@ require("lspconfig/sixtyfps")
 nvim_lsp.sixtyfps.setup {}
 require("lspconfig/asm")
 nvim_lsp.asm.setup {}
+nvim_lsp.zls.setup {}
 nvim_lsp.cssls.setup {capabilities = capabilities}
 nvim_lsp.html.setup {capabilities = capabilities}
 nvim_lsp.gdscript.setup {}
@@ -78,7 +79,8 @@ nvim_lsp.efm.setup {
                         '%f:%l:%c: %tote: %m'
                     }
                 }
-            }
+            },
+            nasm = {{formatCommand = "nasmfmt ; cat ${INPUT}", formatStdin = true}}
         }
     }
 }
