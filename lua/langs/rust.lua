@@ -8,5 +8,6 @@ vim.cmd [[
 augroup LOCAL_RUST
 autocmd!
 autocmd FileType rust nnoremap <buffer><leader>D :lua RustDoc(vim.fn.expand('<cword>'))<CR>
+autocmd FileType rust compiler cargo
 augroup END
 ]]

@@ -5,6 +5,9 @@ return require('packer').startup(function(use)
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use 'nvim-treesitter/nvim-treesitter-textobjects'
     use 'lambdalisue/suda.vim'
+    use 'andweeb/presence.nvim'
+    use 'zyedidia/literate.vim'
+    use 'arrufat/vala.vim'
     use 'hrsh7th/nvim-compe'
     use 'neovim/nvim-lspconfig'
     use 'srcery-colors/srcery-vim'
@@ -14,6 +17,7 @@ return require('packer').startup(function(use)
     use 'svermeulen/vimpeccable'
     use 'L3MON4D3/LuaSnip'
     use 'mfussenegger/nvim-dap'
+    use {'Saecki/crates.nvim', requires = {'nvim-lua/plenary.nvim'}}
     use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
     use {'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim'}
     use 'iamcco/markdown-preview.nvim'

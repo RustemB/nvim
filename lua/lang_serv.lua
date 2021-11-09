@@ -22,10 +22,14 @@ nvim_lsp.sumneko_lua.setup {
         }
     }
 }
+require("lspconfig/swarm")
+nvim_lsp.swarm.setup {}
 require("lspconfig/sixtyfps")
 nvim_lsp.sixtyfps.setup {}
 require("lspconfig/asm")
 nvim_lsp.asm.setup {}
+require("lspconfig/glsl")
+nvim_lsp.glsl.setup {}
 nvim_lsp.zls.setup {}
 nvim_lsp.cssls.setup {capabilities = capabilities}
 nvim_lsp.html.setup {capabilities = capabilities}
@@ -34,11 +38,13 @@ nvim_lsp.dartls.setup {}
 nvim_lsp.clangd.setup {}
 nvim_lsp.bashls.setup {}
 nvim_lsp.hls.setup {}
+nvim_lsp.fortls.setup {}
 nvim_lsp.elmls.setup {}
 nvim_lsp.julials.setup {}
 nvim_lsp.taplo.setup {}
 nvim_lsp.yamlls.setup {}
 nvim_lsp.pylsp.setup {}
+nvim_lsp.vala_ls.setup {}
 --[[
 nvim_lsp.rls.setup {
 	settings = {
@@ -80,7 +86,12 @@ nvim_lsp.efm.setup {
                     }
                 }
             },
-            nasm = {{formatCommand = "nasmfmt ; cat ${INPUT}", formatStdin = true}}
+            nasm = {
+                {formatCommand = "nasmfmt ; cat ${INPUT}", formatStdin = true}
+            },
+            swarm = {
+                {formatCommand = "swarm format --stdin", formatStdin = true}
+            }
         }
     }
 }
