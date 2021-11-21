@@ -1,10 +1,10 @@
 local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
-configs.asm = {
+configs.glsl = {
     default_config = {
-        cmd = {'asm-lsp'},
-        filetypes = {'nasm'},
+        cmd = {'glslls', '--stdio'},
+        filetypes = {'glsl'},
         root_dir = function(filename) return util.path.dirname(filename) end
     },
     docs = {

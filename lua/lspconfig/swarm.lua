@@ -1,10 +1,10 @@
 local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
-configs.sixtyfps = {
+configs.swarm = {
     default_config = {
-        cmd = {'sixtyfps-lsp'},
-        filetypes = {'sixtyfps'},
+        cmd = {'swarm', 'lsp'},
+        filetypes = {'swarm'},
         root_dir = function(filename) return util.path.dirname(filename) end
     },
     docs = {

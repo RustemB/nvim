@@ -24,10 +24,7 @@ nvim_lsp.sumneko_lua.setup {
 }
 require("lspconfig/swarm")
 nvim_lsp.swarm.setup {}
-require("lspconfig/sixtyfps")
 nvim_lsp.sixtyfps.setup {}
-require("lspconfig/asm")
-nvim_lsp.asm.setup {}
 require("lspconfig/glsl")
 nvim_lsp.glsl.setup {}
 nvim_lsp.zls.setup {}
@@ -59,6 +56,7 @@ nvim_lsp.rust_analyzer.setup {
 }
 nvim_lsp.efm.setup {
     init_options = {documentFormatting = true},
+    filetypes = {'markdown', 'sh', 'lua', 'make', 'python', 'nasm'},
     settings = {
         rootMarkers = {".git/"},
         languages = {
@@ -88,9 +86,6 @@ nvim_lsp.efm.setup {
             },
             nasm = {
                 {formatCommand = "nasmfmt ; cat ${INPUT}", formatStdin = true}
-            },
-            swarm = {
-                {formatCommand = "swarm format --stdin", formatStdin = true}
             }
         }
     }
