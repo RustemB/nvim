@@ -8,12 +8,10 @@ ls.snippets = {
         s("def", {
             t("def "), i(1, "fun"), t("("), i(2), t(")"), i(3), t({":", "\t"}),
             i(4, "pass")
-        }),
-        s("class", {
+        }), s("class", {
             t("class "), i(1, "Name"), t("("), i(2), t({"):", "\t"}),
             t("def __init__(self"), i(3), t({"):", "\t\t"}), i(4, "pass")
-        }),
-        s("forr", {
+        }), s("forr", {
             t("for "), i(1, "i"), t(" in range("), i(2, "n"), t({"):", "\t"}),
             i(3, "pass")
         })
