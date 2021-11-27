@@ -22,10 +22,10 @@ nvim_lsp.sumneko_lua.setup {
         }
     }
 }
-require("lspconfig/swarm")
+require("lspconfig/server_configurations/swarm")
 nvim_lsp.swarm.setup {}
 nvim_lsp.sixtyfps.setup {}
-require("lspconfig/glsl")
+require("lspconfig/server_configurations/glsl")
 nvim_lsp.glsl.setup {}
 nvim_lsp.zls.setup {}
 nvim_lsp.cssls.setup {capabilities = capabilities}
