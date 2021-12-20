@@ -31,26 +31,14 @@ nvim_lsp.zls.setup {}
 nvim_lsp.cssls.setup {capabilities = capabilities}
 nvim_lsp.html.setup {capabilities = capabilities}
 nvim_lsp.gdscript.setup {}
-nvim_lsp.dartls.setup {}
 nvim_lsp.clangd.setup {}
 nvim_lsp.bashls.setup {}
 nvim_lsp.hls.setup {}
-nvim_lsp.fortls.setup {}
 nvim_lsp.elmls.setup {}
 nvim_lsp.julials.setup {}
 nvim_lsp.taplo.setup {}
 nvim_lsp.yamlls.setup {}
 nvim_lsp.pylsp.setup {}
-nvim_lsp.vala_ls.setup {}
---[[
-nvim_lsp.rls.setup {
-	settings = {
-		rust = {
-			unstable_features = true,
-		},
-	},
-}
---]]
 nvim_lsp.rust_analyzer.setup {
     cmd = {"rustup", "run", "nightly", "rust-analyzer"}
 }
